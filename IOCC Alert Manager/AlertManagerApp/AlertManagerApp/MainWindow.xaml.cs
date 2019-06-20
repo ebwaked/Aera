@@ -29,14 +29,7 @@ namespace AlertManagerApp
             //getAllAlerts().ContinueWith(() => { return await getAllAlerts() },
             //    TaskScheduler.FromCurrentSynchronizationContext());
 
-            try
-            {
-                Task task = SetCriticalAlerts();
-            }
-            catch (Exception e)
-            {
-                // logger here
-            }
+
             //var listOfAllAlerts = await getAllAlerts();
 
 
@@ -54,16 +47,16 @@ namespace AlertManagerApp
             //AlertsCollectionMajor.Source = listOfAlerts;
         }
 
-        private async Task SetCriticalAlerts()
-        {
-            this.CriticalAlertGV.ItemsSource = await getAllAlerts();
-        }
+        //private async Task SetCriticalAlerts()
+        //{
+        //    this.CriticalAlertGV.ItemsSource = await getAllAlerts();
+        //}
 
-        static async Task<IList<Alert>> getAllAlerts()
-        {
-            return IList < Alert > apiAlertsResponse = await RestUtility.CallServiceAsync<IList<Alert>>("https://localhost:44396/api/Alerts", string.Empty, null, "GET",
-                string.Empty, string.Empty) as IList<Alert>;
-        }
+        //static async Task<IList<Alert>> getAllAlerts()
+        //{
+        //    return IList < Alert > apiAlertsResponse = await RestUtility.CallServiceAsync<IList<Alert>>("https://localhost:44396/api/Alerts", string.Empty, null, "GET",
+        //        string.Empty, string.Empty) as IList<Alert>;
+        //}
 
         // First way to get Data bound
         //public class AlertViewModel

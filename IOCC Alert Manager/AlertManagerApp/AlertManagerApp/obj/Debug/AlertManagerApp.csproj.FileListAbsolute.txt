@@ -29,7 +29,6 @@ C:\Workspace\IOCC Alert Manager\AlertManagerApp\AlertManagerApp\bin\Debug\fr\Tel
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\AlertManagerApp\bin\Debug\it\Telerik.Windows.Controls.resources.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\AlertManagerApp\bin\Debug\nl\Telerik.Windows.Controls.resources.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\AlertManagerApp\bin\Debug\tr\Telerik.Windows.Controls.resources.dll
-C:\Workspace\IOCC Alert Manager\AlertManagerApp\AlertManagerApp\obj\Debug\AlertManagerApp.csprojAssemblyReference.cache
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\AlertManagerApp\obj\Debug\MainWindow.g.cs
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\AlertManagerApp\obj\Debug\App.g.cs
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\AlertManagerApp\obj\Debug\AlertManagerApp_MarkupCompile.cache

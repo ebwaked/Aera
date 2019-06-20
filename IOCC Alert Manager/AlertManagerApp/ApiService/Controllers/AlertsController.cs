@@ -15,7 +15,7 @@ namespace AlertManagerApp.Controllers
         // GET api/alerts
         public IList GetAlerts()
         {
-            var alertDemoCollection = new IList<Alert>();
+            var alertDemoCollection = new List<Alert>();
 
             for (int x = 1; x <= 500; x++)
             {

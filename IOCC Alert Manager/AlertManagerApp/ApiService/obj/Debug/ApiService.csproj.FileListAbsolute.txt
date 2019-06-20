@@ -1,3 +1,4 @@
+C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\ApiService.dll.config
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\ApiService.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\ApiService.pdb
@@ -8,7 +9,6 @@ C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\roslyn\csi.exe
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\roslyn\csi.exe.config
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\roslyn\csi.rsp
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
@@ -78,7 +78,6 @@ C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.WebPag
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.WebPages.Razor.xml
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\Antlr3.Runtime.pdb
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\obj\Debug\ApiService.csprojAssemblyReference.cache
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\obj\Debug\ApiService.csproj.CoreCompileInputs.cache
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\obj\Debug\ApiService.csproj.CopyComplete
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\obj\Debug\ApiService.dll
