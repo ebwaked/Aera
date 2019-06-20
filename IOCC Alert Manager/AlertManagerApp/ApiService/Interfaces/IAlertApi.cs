@@ -6,8 +6,6 @@ namespace AlertManagerApp
 {
     public interface IAlertApi
     {
-        //Task<IHttpActionResult> GetAlerts();
-
         // GET api/alerts
         IList GetAlerts();
 

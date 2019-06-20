@@ -52,7 +52,9 @@ C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\Microsoft.CodeDom
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\Microsoft.Web.Infrastructure.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\Newtonsoft.Json.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Net.Http.Formatting.dll
+C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.Cors.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.Helpers.dll
+C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.Http.Cors.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.Http.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.Http.WebHost.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.Mvc.dll
@@ -62,6 +64,7 @@ C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.WebPag
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.WebPages.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.WebPages.Razor.dll
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\WebGrease.dll
+C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.Http.Cors.xml
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\Newtonsoft.Json.xml
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Net.Http.Formatting.xml
 C:\Workspace\IOCC Alert Manager\AlertManagerApp\ApiService\bin\System.Web.Helpers.xml
