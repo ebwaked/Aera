@@ -12,11 +12,16 @@ namespace AlertManagerApp.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AlertsController : ApiController, IAlertApi
     {
+        // TODO
+        //public async Task<IHttpActionResult> GetAlerts()
+        //{
+        //    return Ok(alertArray);
+        //}
 
         // GET api/alerts
-        public IList<Alert> GetAlerts()
+        public ObservableCollection<Alert> GetAlerts()
         {
-            var alertDemoCollection = new List<Alert>();
+            var alertDemoCollection = new ObservableCollection<Alert>();
 
             for (int x = 1; x <= 500; x++)
             {
@@ -35,15 +40,7 @@ namespace AlertManagerApp.Controllers
 
             return alertDemoCollection;
         }
-
-        // TODO
-        //public async Task<IHttpActionResult> GetAlerts()
-        //{
-        //    Alert[] alertArray = new Alert[] { alert1, alert2 };
-
-        //    return Ok(alertArray);
-        //}
-
+        
         // GET api/alerts/5
         public string GetAlert(int id)
         {
@@ -67,28 +64,5 @@ namespace AlertManagerApp.Controllers
         {
             throw new System.NotImplementedException();
         }
-
-        Alert alert1 = new Alert
-        {
-            Id = 1,
-            AlertDT = new DateTime(2019, 02, 28),
-            AlertTypeName = "test1",
-            Responses = 2,
-            FacilityName = "test1",
-            ReportedBy = "test1",
-            FacilityType = "test1",
-            FirstViewed = new DateTime(2019, 03, 11)
-        };
-        Alert alert2 = new Alert
-        {
-            Id = 2,
-            AlertDT = new DateTime(2019, 03, 22),
-            AlertTypeName = "test2",
-            Responses = 4,
-            FacilityName = "test2",
-            ReportedBy = "test2",
-            FacilityType = "test2",
-            FirstViewed = new DateTime(2019, 04, 07)
-        };
     }
 }

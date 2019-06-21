@@ -43,7 +43,7 @@ namespace AlertManagerApp.Helpers
 
             if (response == null)
             {
-                return default;
+                return null; //used to be { default } --- not sure why its shows an error when I moved code to the aera laptop
             }
 
             var streamReader = new StreamReader(response.GetResponseStream());

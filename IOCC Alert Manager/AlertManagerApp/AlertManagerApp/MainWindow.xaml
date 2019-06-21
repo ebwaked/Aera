@@ -1,120 +1,33 @@
-﻿<Window x:Class="AlertManagerApp.MainWindow"
+﻿<Window
 		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:AlertManagerApp"
+		xmlns:ViewModels="clr-namespace:AlertManagerApp.ViewModels" x:Class="AlertManagerApp.MainWindow"
 		mc:Ignorable="d"
 		Title="IOCC Application" d:DesignWidth="1920" d:DesignHeight="1080">
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="2*"/>
-			<RowDefinition Height="8*"/>
-			<RowDefinition Height="2*"/>
-		</Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Background="#e3e1e2">
-			<Image Source="Images/logo.png" MinWidth="207" MinHeight="73" HorizontalAlignment="Left" Margin="4" />
-			<Label Content="Operations Alert Manager" VerticalAlignment="Center" FontSize="50" FontWeight="Bold" Foreground="#a6192e" Padding="30,0,40,0"/>
-		</StackPanel>
-		<StackPanel Grid.Row="1" HorizontalAlignment="Center">
-			<TabControl MinHeight="500" MinWidth="1800" Margin="0,50,0,0">
-				<TabItem Header="Critical (3)" MinHeight="40" MinWidth="100" FontSize="20">
-					<StackPanel>
-						<!-- Old way of labels and combobox dropdown filters -->
-						<!--<Grid>
-							<StackPanel Orientation="Horizontal">
-								<StackPanel Orientation="Vertical">
-									<Label Content="ID"></Label>
-									<ComboBox MinWidth="225" x:Name="Critical_ID"
-								  IsTextSearchEnabled="False"
-								  IsEditable="True"
-								  ItemsSource="{Binding Critical_ID_DS}"
-								  IsDropDownOpen="True"
-								  StaysOpenOnEdit="True"
-								  KeyUp="Critical_ID_KeyUp"/>
-								</StackPanel>
-								<StackPanel Orientation="Vertical">
-									<Label Content="Alert Date"></Label>
-									<ComboBox MinWidth="225" x:Name="Critical_AlertDT"
-								  IsTextSearchEnabled="False"
-								  IsEditable="True"
-								  ItemsSource="{Binding Critical_ID_DS}"
-								  IsDropDownOpen="True"
-								  StaysOpenOnEdit="True"
-								  KeyUp="Critical_ID_KeyUp"/>
-								</StackPanel>
-								<StackPanel Orientation="Vertical">
-									<Label Content="Alert Type Name"></Label>
-									<ComboBox MinWidth="225" x:Name="Critical_AlertTypeName"
-								  IsTextSearchEnabled="False"
-								  IsEditable="True"
-								  ItemsSource="{Binding Critical_ID_DS}"
-								  IsDropDownOpen="True"
-								  StaysOpenOnEdit="True"
-								  KeyUp="Critical_ID_KeyUp"/>
-								</StackPanel>
-								<StackPanel Orientation="Vertical">
-									<Label Content="Responses"></Label>
-									<ComboBox MinWidth="225" x:Name="Critical_Responses"
-								  IsTextSearchEnabled="False"
-								  IsEditable="True"
-								  ItemsSource="{Binding Critical_ID_DS}"
-								  IsDropDownOpen="True"
-								  StaysOpenOnEdit="True"
-								  KeyUp="Critical_ID_KeyUp"/>
-								</StackPanel>
-								<StackPanel Orientation="Vertical">
-									<Label Content="Facility Name"></Label>
-									<ComboBox MinWidth="225" x:Name="Critical_FacilityName"
-								  IsTextSearchEnabled="False"
-								  IsEditable="True"
-								  ItemsSource="{Binding Critical_ID_DS}"
-								  IsDropDownOpen="True"
-								  StaysOpenOnEdit="True"
-								  KeyUp="Critical_ID_KeyUp"/>
-								</StackPanel>
-								<StackPanel Orientation="Vertical">
-									<Label Content="Reported By"></Label>
-									<ComboBox MinWidth="225" x:Name="Critical_ReportedBy"
-								  IsTextSearchEnabled="False"
-								  IsEditable="True"
-								  ItemsSource="{Binding Critical_ID_DS}"
-								  IsDropDownOpen="True"
-								  StaysOpenOnEdit="True"
-								  KeyUp="Critical_ID_KeyUp"/>
-								</StackPanel>
-								<StackPanel Orientation="Vertical">
-									<Label Content="Facility Type"></Label>
-									<ComboBox MinWidth="225" x:Name="Critical_FacilityType"
-								  IsTextSearchEnabled="False"
-								  IsEditable="True"
-								  ItemsSource="{Binding Critical_ID_DS}"
-								  IsDropDownOpen="True"
-								  StaysOpenOnEdit="True"
-								  KeyUp="Critical_ID_KeyUp"/>
-								</StackPanel>
-								<StackPanel Orientation="Vertical">
-									<Label Content="First Viewed"></Label>
-									<ComboBox MinWidth="225" x:Name="Critical_FirstViewed"
-								  IsTextSearchEnabled="False"
-								  IsEditable="True"
-								  ItemsSource="{Binding Critical_ID_DS}"
-								  IsDropDownOpen="True"
-								  StaysOpenOnEdit="True"
-								  KeyUp="Critical_ID_KeyUp"/>
-								</StackPanel>
-							</StackPanel>
-						</Grid>-->
-						<!-- Old grid to display alerts -->
-						<!--<Grid>
-							<Grid.RowDefinitions>
-								<RowDefinition Height="*" MaxHeight="350"></RowDefinition>
-							</Grid.RowDefinitions>
-							<DataGrid Height="350" Width="1800" Grid.Row="0" ItemsSource="{Binding Source={StaticResource AlertsCollectionCritical}}" IsSynchronizedWithCurrentItem="True" />
-						</Grid>-->
-						<telerik:RadGridView x:Name="CriticalAlertGV"
-							 ItemsSource="{Binding DataContext}"
+    <Window.DataContext>
+        <ViewModels:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="#e3e1e2">
+            <Image Source="Images/logo.png" MinWidth="207" MinHeight="73" HorizontalAlignment="Left" Margin="4" />
+            <Label Content="Operations Alert Manager" VerticalAlignment="Center" FontSize="50" FontWeight="Bold" Foreground="#a6192e" Padding="30,0,40,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+            <TabControl MinHeight="500" MinWidth="1800" Margin="0,50,0,0">
+                <TabItem Header="Critical (3)" MinHeight="40" MinWidth="100" FontSize="20">
+                    <StackPanel>
+                        <telerik:RadGridView x:Name="CriticalAlertGV"
+							 ItemsSource="{Binding Alerts}"
 							 Margin="0" GroupRenderMode="Flat"
 											 ColumnWidth="*" Height="475"
 											 SelectionMode="Extended"
@@ -124,52 +37,52 @@
 							 AutoGenerateColumns="False"
 							 CanUserFreezeColumns="False"
 							 CanUserResizeColumns="False">
-							<telerik:RadGridView.Columns>
-								<telerik:GridViewDataColumn Header="AlertDT"
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Header="AlertDT"
 															DataMemberBinding="{Binding AlertDT}"/>
-								<telerik:GridViewDataColumn Header="AlertTypeName"
+                                <telerik:GridViewDataColumn Header="AlertTypeName"
 															DataMemberBinding="{Binding AlertTypeName}"/>
-								<telerik:GridViewDataColumn Header="Responses"
+                                <telerik:GridViewDataColumn Header="Responses"
 															DataMemberBinding="{Binding Responses}"/>
-								<telerik:GridViewDataColumn Header="FacilityName"
+                                <telerik:GridViewDataColumn Header="FacilityName"
 															DataMemberBinding="{Binding FacilityName}"/>
-								<telerik:GridViewDataColumn Header="ReportedBy"
+                                <telerik:GridViewDataColumn Header="ReportedBy"
 															DataMemberBinding="{Binding ReportedBy}"/>
-								<telerik:GridViewDataColumn Header="FacilityType"
+                                <telerik:GridViewDataColumn Header="FacilityType"
 															DataMemberBinding="{Binding FacilityType}"/>
-								<telerik:GridViewDataColumn Header="FirstViewed"
+                                <telerik:GridViewDataColumn Header="FirstViewed"
 															DataMemberBinding="{Binding FirstViewed}"/>
-							</telerik:RadGridView.Columns>
-						</telerik:RadGridView>
-					</StackPanel>
-				</TabItem>
-				<TabItem Header="Major (1)" MinHeight="40" MinWidth="150" FontSize="20">
-					<Canvas>
-						<!--<DataGrid Height="500" Width="1800" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding Source={StaticResource AlertsCollectionMajor}}" IsSynchronizedWithCurrentItem="True" />-->
-					</Canvas>
-				</TabItem>
-				<TabItem Header="Minor (5)" MinHeight="40" MinWidth="150" FontSize="20">
-					<Label Content="Content goes here..." />
-				</TabItem>
-				<TabItem Header="Warning (2)" MinHeight="40" MinWidth="150" FontSize="20">
-					<Label Content="Content goes here..." />
-				</TabItem>
-				<TabItem Header="Information (1034)" MinHeight="40" MinWidth="150" FontSize="20">
-					<Label Content="Content goes here..." />
-				</TabItem>
-				<TabItem Header="All (1045)" MinHeight="40" MinWidth="150" FontSize="20">
-					<Label Content="Content goes here..." />
-				</TabItem>
-				<TabItem Header="In Progress" MinHeight="40" MinWidth="150" FontSize="20">
-					<Label Content="Content goes here..." />
-				</TabItem>
-				<TabItem Header="Resolved" MinHeight="40" MinWidth="100" FontSize="20">
-					<Label Content="Content goes here..." />
-				</TabItem>
-			</TabControl>
-		</StackPanel>
-		<StackPanel Grid.Row="2">
-			<Label Content="Testing Row"></Label>
-		</StackPanel>
-	</Grid>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Major (1)" MinHeight="40" MinWidth="150" FontSize="20">
+                    <Canvas>
+                        <!--<DataGrid Height="500" Width="1800" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding Source={StaticResource AlertsCollectionMajor}}" IsSynchronizedWithCurrentItem="True" />-->
+                    </Canvas>
+                </TabItem>
+                <TabItem Header="Minor (5)" MinHeight="40" MinWidth="150" FontSize="20">
+                    <Label Content="Content goes here..." />
+                </TabItem>
+                <TabItem Header="Warning (2)" MinHeight="40" MinWidth="150" FontSize="20">
+                    <Label Content="Content goes here..." />
+                </TabItem>
+                <TabItem Header="Information (1034)" MinHeight="40" MinWidth="150" FontSize="20">
+                    <Label Content="Content goes here..." />
+                </TabItem>
+                <TabItem Header="All (1045)" MinHeight="40" MinWidth="150" FontSize="20">
+                    <Label Content="Content goes here..." />
+                </TabItem>
+                <TabItem Header="In Progress" MinHeight="40" MinWidth="150" FontSize="20">
+                    <Label Content="Content goes here..." />
+                </TabItem>
+                <TabItem Header="Resolved" MinHeight="40" MinWidth="100" FontSize="20">
+                    <Label Content="Content goes here..." />
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <Label Content="Testing Row"/>
+        </StackPanel>
+    </Grid>
 </Window>
