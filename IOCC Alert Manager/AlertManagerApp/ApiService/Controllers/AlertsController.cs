@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
@@ -13,7 +14,7 @@ namespace AlertManagerApp.Controllers
     {
 
         // GET api/alerts
-        public IList GetAlerts()
+        public IList<Alert> GetAlerts()
         {
             var alertDemoCollection = new List<Alert>();
 

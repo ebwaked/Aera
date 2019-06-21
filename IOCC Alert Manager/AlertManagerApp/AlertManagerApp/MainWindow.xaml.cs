@@ -5,6 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
+using System.Net;
+using System.IO;
+using System.Text;
+using System.Threading;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
@@ -17,8 +21,10 @@ namespace AlertManagerApp
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
+
             InitializeComponent();
             Top = 0;
             Left = 0;
@@ -26,6 +32,15 @@ namespace AlertManagerApp
             this.Width = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width;
             this.WindowStyle = WindowStyle.ThreeDBorderWindow;
 
+            CriticalAlertGV.ItemsSource = DataContext;
+            //try
+            //{
+            //    //GetAllAlerts().Wait();
+            //}
+            //catch (Exception ex)
+            //{
+            //    new Logger("Caught exception for GetAllCriticalAlerts: " + ex.Message);
+            //}
             //getAllAlerts().ContinueWith(() => { return await getAllAlerts() },
             //    TaskScheduler.FromCurrentSynchronizationContext());
 
@@ -52,10 +67,41 @@ namespace AlertManagerApp
         //    this.CriticalAlertGV.ItemsSource = await getAllAlerts();
         //}
 
-        //static async Task<IList<Alert>> getAllAlerts()
+        //async Task GetAllAlerts()
         //{
-        //    return IList < Alert > apiAlertsResponse = await RestUtility.CallServiceAsync<IList<Alert>>("https://localhost:44396/api/Alerts", string.Empty, null, "GET",
-        //        string.Empty, string.Empty) as IList<Alert>;
+        //    await Task.Run(async () =>
+        //    {
+        //        IList<Alert> apiAlertsResponse = await RestUtility.CallServiceAsync<IList<Alert>>("https://localhost:44396/api/Alerts", string.Empty, null, "GET",
+        //            string.Empty, string.Empty) as IList<Alert>;
+
+        //        displayCriticalAlerts(apiAlertsResponse);
+        //    });
+        //}
+
+        void displayCriticalAlerts(IList<Alert> apiAlertsResponse)
+        {
+            try
+            {
+                Dispatcher.BeginInvoke(new Action(() =>
+             {
+                 CriticalAlertGV.ItemsSource = apiAlertsResponse;
+             }));
+            }
+            catch (Exception ex)
+            {
+                new Logger("Exception caught in displayCriticalAlerts :" + ex.Message);
+            }
+        }
+
+        //public class MainViewModel
+        //{
+        //    public MainViewModel()
+        //    {
+        //        UrlByteCount = new NotifyTaskCompletion<IList<Alert>>(
+        //          RestUtility.CallServiceAsync<IList<Alert>>("https://localhost:44396/api/Alerts", string.Empty, null, "GET",
+        //        string.Empty, string.Empty) as IList<Alert>);
+        //    }
+        //    public NotifyTaskCompletion<int> UrlByteCount { get; private set; }
         //}
 
         // First way to get Data bound
@@ -129,4 +175,5 @@ namespace AlertManagerApp
     //{
 
     //}
+
 }

@@ -1,8 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace AlertManagerApp.Models
 {
-    public class Alert
+    public class Alert : INotifyPropertyChanged
     {
         public int Id { get; set; }
 
@@ -19,5 +20,7 @@ namespace AlertManagerApp.Models
         public string FacilityType { get; set; }
 
         public DateTime FirstViewed { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

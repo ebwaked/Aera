@@ -1,5 +1,6 @@
 ﻿using AlertManagerApp.Models;
 using System.Collections;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace AlertManagerApp
@@ -7,7 +8,7 @@ namespace AlertManagerApp
     public interface IAlertApi
     {
         // GET api/alerts
-        IList GetAlerts();
+        IList<Alert> GetAlerts();
 
         // GET api/alerts/5
         string GetAlert(int id);

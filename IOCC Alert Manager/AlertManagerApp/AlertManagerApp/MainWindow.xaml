@@ -7,14 +7,6 @@
 		xmlns:local="clr-namespace:AlertManagerApp"
 		mc:Ignorable="d"
 		Title="IOCC Application" d:DesignWidth="1920" d:DesignHeight="1080">
-	<Window.Resources>
-		<CollectionViewSource x:Key="AlertsCollectionCritical" 
-					  />
-		<!--Filter="FirstSource"-->
-		<CollectionViewSource x:Key="AlertsCollectionMajor"
-					   />
-		<!--Filter="SecondSource"-->
-	</Window.Resources>
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="2*"/>
@@ -153,7 +145,7 @@
 				</TabItem>
 				<TabItem Header="Major (1)" MinHeight="40" MinWidth="150" FontSize="20">
 					<Canvas>
-						<DataGrid Height="500" Width="1800" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding Source={StaticResource AlertsCollectionMajor}}" IsSynchronizedWithCurrentItem="True" />
+						<!--<DataGrid Height="500" Width="1800" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding Source={StaticResource AlertsCollectionMajor}}" IsSynchronizedWithCurrentItem="True" />-->
 					</Canvas>
 				</TabItem>
 				<TabItem Header="Minor (5)" MinHeight="40" MinWidth="150" FontSize="20">
