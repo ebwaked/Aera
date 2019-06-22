@@ -57,9 +57,5 @@ namespace AlertManagerApp.ViewModels
             Alerts = await RestUtility.CallServiceAsync<ObservableCollection<Alert>>("https://localhost:44396/api/Alerts", string.Empty, null, "GET",
                     string.Empty, string.Empty) as ObservableCollection<Alert>;
         }
-
-        
-
-
     }
 }

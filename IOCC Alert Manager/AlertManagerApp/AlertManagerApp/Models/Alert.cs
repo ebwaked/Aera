@@ -137,8 +137,7 @@ namespace AlertManagerApp.Models
                 }
             }
         }
-
-        // TODO - do i need? overengineered???
+        
         public ObservableCollection<Alert> Alerts
         {
             get { return alerts; }
