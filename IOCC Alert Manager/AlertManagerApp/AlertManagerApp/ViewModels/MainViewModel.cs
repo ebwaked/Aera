@@ -1,12 +1,8 @@
-﻿using AlertManagerApp.Helpers;
-using AlertManagerApp.Models;
-using System;
-using System.Collections.Generic;
+﻿using AlertManagerApp.Models;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Telerik.Windows.Controls;
+using Common;
 
 namespace AlertManagerApp.ViewModels
 {
