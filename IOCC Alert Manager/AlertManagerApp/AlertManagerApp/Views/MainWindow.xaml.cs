@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace AlertManagerApp
+namespace OperationsAlertManager
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

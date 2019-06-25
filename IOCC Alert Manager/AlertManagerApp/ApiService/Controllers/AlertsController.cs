@@ -1,11 +1,12 @@
-﻿using AlertManagerApp.Models;
+﻿using OperationsAlertManager.Interfaces;
+using OperationsAlertManager.Models;
 using Common;
 using System;
 using System.Collections.ObjectModel;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace AlertManagerApp.Controllers
+namespace OperationsAlertManager.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AlertsController : ApiController, IAlertApi

@@ -4,8 +4,8 @@
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-		xmlns:local="clr-namespace:AlertManagerApp"
-		xmlns:ViewModels="clr-namespace:AlertManagerApp.ViewModels" x:Class="AlertManagerApp.MainWindow"
+		xmlns:local="clr-namespace:OperationsAlertManager"
+		xmlns:ViewModels="clr-namespace:OperationsAlertManager.ViewModels" x:Class="OperationsAlertManager.MainWindow"
 		mc:Ignorable="d"
 		Title="IOCC Application" d:DesignWidth="1920" d:DesignHeight="1080">
     <Window.DataContext>
@@ -19,7 +19,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Background="#e3e1e2">
-            <Image Source="Images/logo.png" MinWidth="207" MinHeight="73" HorizontalAlignment="Left" Margin="4" />
+            <Image Source="../Images/logo.png" MinWidth="207" MinHeight="73" HorizontalAlignment="Left" Margin="4" />
             <Label Content="Operations Alert Manager" VerticalAlignment="Center" FontSize="50" FontWeight="Bold" Foreground="#a6192e" Padding="30,0,40,0"/>
         </StackPanel>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center">

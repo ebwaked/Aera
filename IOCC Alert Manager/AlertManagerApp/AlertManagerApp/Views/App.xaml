@@ -1,7 +1,7 @@
-﻿<Application x:Class="AlertManagerApp.App"
+﻿<Application x:Class="OperationsAlertManager.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:AlertManagerApp"
+             xmlns:local="clr-namespace:OperationsAlertManager"
              Startup="ApplicationStart">
     <Application.Resources>
          

@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace AlertManagerApp.Models
+namespace OperationsAlertManager.Models
 {
     public class Alert : INotifyPropertyChanged
     {

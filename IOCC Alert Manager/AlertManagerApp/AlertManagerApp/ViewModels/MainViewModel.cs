@@ -1,13 +1,14 @@
-﻿using AlertManagerApp.Models;
+﻿using OperationsAlertManager.Models;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Telerik.Windows.Controls;
 using Common;
 
-namespace AlertManagerApp.ViewModels
+namespace OperationsAlertManager.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
+        // TODO can i removed lines 12-27
         ObservableCollection<Alert> _alerts = new ObservableCollection<Alert>();
         public ObservableCollection<Alert> Alerts
         {

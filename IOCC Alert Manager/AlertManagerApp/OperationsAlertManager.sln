@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertManagerApp", "AlertManagerApp\AlertManagerApp.csproj", "{A6DA5766-7BB1-4441-9581-1D605738F284}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertManager.WPFClient", "AlertManagerApp\AlertManager.WPFClient.csproj", "{A6DA5766-7BB1-4441-9581-1D605738F284}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiService", "ApiService\ApiService.csproj", "{0FDE5EDF-4907-4D04-B69F-DDC81DC4B913}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertManager.Services", "ApiService\AlertManager.Services.csproj", "{0FDE5EDF-4907-4D04-B69F-DDC81DC4B913}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{922DB250-F7B9-425E-B0BA-A673D386E8F9}"
 EndProject

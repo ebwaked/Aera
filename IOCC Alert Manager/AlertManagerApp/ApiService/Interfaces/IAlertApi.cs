@@ -1,10 +1,10 @@
-﻿using AlertManagerApp.Models;
+﻿using OperationsAlertManager.Models;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Web.Http;
 
-namespace AlertManagerApp
+namespace OperationsAlertManager.Interfaces
 {
     public interface IAlertApi
     {
