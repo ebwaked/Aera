@@ -118,7 +118,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Alert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -149,6 +148,10 @@
     <Resource Include="Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AlertManager.DataAccessLayer\AlertManager.DataAccessLayer.csproj">
+      <Project>{6a36ce0a-130c-4014-b264-9b5272282cd7}</Project>
+      <Name>AlertManager.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{922db250-f7b9-425e-b0ba-a673d386e8f9}</Project>
       <Name>Common</Name>
