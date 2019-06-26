@@ -5,6 +5,8 @@ using System;
 using System.Collections.ObjectModel;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace OperationsAlertManager.Controllers
 {
@@ -18,11 +20,11 @@ namespace OperationsAlertManager.Controllers
         //}
 
         // GET api/alerts
-        public ObservableCollection<Alert> GetAlerts()
+        public IList<Alert> GetAlerts()
         {
             try
             {
-                var alertDemoCollection = new ObservableCollection<Alert>();
+                List<Alert> alertDemoCollection = new List<Alert>();
 
                 for (int x = 1; x <= 500; x++)
                 {

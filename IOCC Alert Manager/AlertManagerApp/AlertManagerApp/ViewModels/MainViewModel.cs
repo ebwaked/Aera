@@ -26,27 +26,16 @@ namespace OperationsAlertManager.ViewModels
             }
         }
 
+        //public NotifyTaskCompletion<ObservableCollection<Alert>> NTCAlerts { get; private set; }
+        
         public MainViewModel()
         {
-            this.Alerts = new ObservableCollection<Alert>();
-
-            //for (int x = 1; x <= 500; x++)
-            //{
-            //    var dc = new Alert();
-            //    dc.Id = x;
-            //    dc.AlertDT = DateTime.Today.AddDays(x);
-            //    dc.AlertTypeName = "Alert Type Name " + x.ToString();
-            //    dc.Responses = x + 1;
-            //    dc.FacilityName = x % 2 == 0 ?
-            //        "Super Company " + x.ToString() : "Sub-par company " + x.ToString();
-            //    dc.ReportedBy = "Reported Name " + x.ToString();
-            //    dc.FacilityType = "Facility Type " + x.ToString();
-            //    dc.FirstViewed = DateTime.Today.AddDays(x + 2);
-            //    Alerts.Add(dc);
-            //}
-
-            // TODO - make async?? 
+            Alerts = new ObservableCollection<Alert>();
             LoadCriticalAlertsTaskMethod();
+
+            // Slower way but may need if we run into UI blocking or crashes from uncaught errors - if changed to this change binding on XAML grid to " NTCAlerts.Result "
+            //NTCAlerts = new NotifyTaskCompletion<ObservableCollection<Alert>>(LoadCriticalAlertsTaskMethod());
+
         }
 
         private async Task LoadCriticalAlertsTaskMethod()
@@ -54,5 +43,12 @@ namespace OperationsAlertManager.ViewModels
             Alerts = await RestUtility.CallServiceAsync<ObservableCollection<Alert>>("https://localhost:44396/api/Alerts", string.Empty, null, "GET",
                     string.Empty, string.Empty) as ObservableCollection<Alert>;
         }
+
+        // Slower way but may need if we run into UI blocking or crashes from uncaught errors
+        //private async Task<ObservableCollection<Alert>> LoadCriticalAlertsTaskMethod()
+        //{
+        //    return Alerts = await RestUtility.CallServiceAsync<ObservableCollection<Alert>>("https://localhost:44396/api/Alerts", string.Empty, null, "GET",
+        //            string.Empty, string.Empty) as ObservableCollection<Alert>;
+        //}
     }
 }

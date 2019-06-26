@@ -137,7 +137,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IAlertApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -157,9 +156,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AlertManager.DataAccessLayer\AlertManager.DataAccessLayer.csproj">
+    <ProjectReference Include="..\AlertManager.Contracts\AlertManager.Contracts.csproj">
+      <Project>{92ffc4f1-3648-4563-97e0-f1bf581e4ebf}</Project>
+      <Name>AlertManager.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AlertManager.DataAccessLayer\AlertManager.Repository.csproj">
       <Project>{6a36ce0a-130c-4014-b264-9b5272282cd7}</Project>
-      <Name>AlertManager.DataAccessLayer</Name>
+      <Name>AlertManager.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{922db250-f7b9-425e-b0ba-a673d386e8f9}</Project>
