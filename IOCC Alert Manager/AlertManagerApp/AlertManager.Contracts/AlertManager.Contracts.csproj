@@ -7,7 +7,7 @@
     <ProjectGuid>{92FFC4F1-3648-4563-97E0-F1BF581E4EBF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AlertManager.Contracts</RootNamespace>
+    <RootNamespace>OperationsAlertManager.Contracts</RootNamespace>
     <AssemblyName>AlertManager.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
