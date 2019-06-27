@@ -160,7 +160,7 @@
       <Project>{92ffc4f1-3648-4563-97e0-f1bf581e4ebf}</Project>
       <Name>AlertManager.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AlertManager.DataAccessLayer\AlertManager.Repository.csproj">
+    <ProjectReference Include="..\AlertManager.Repository\AlertManager.Repository.csproj">
       <Project>{6a36ce0a-130c-4014-b264-9b5272282cd7}</Project>
       <Name>AlertManager.Repository</Name>
     </ProjectReference>

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertManager.WPFClient", "AlertManagerApp\AlertManager.WPFClient.csproj", "{A6DA5766-7BB1-4441-9581-1D605738F284}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertManager.WPFClient", "AlertManager.WPFClient\AlertManager.WPFClient.csproj", "{A6DA5766-7BB1-4441-9581-1D605738F284}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertManager.Services", "ApiService\AlertManager.Services.csproj", "{0FDE5EDF-4907-4D04-B69F-DDC81DC4B913}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertManager.Services", "AlertManager.Services\AlertManager.Services.csproj", "{0FDE5EDF-4907-4D04-B69F-DDC81DC4B913}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{922DB250-F7B9-425E-B0BA-A673D386E8F9}"
 EndProject
@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Common", "1 - Common", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Data", "3 - Data", "{67250415-4EF3-4639-A968-30463FB56A2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertManager.Repository", "AlertManager.DataAccessLayer\AlertManager.Repository.csproj", "{6A36CE0A-130C-4014-B264-9B5272282CD7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertManager.Repository", "AlertManager.Repository\AlertManager.Repository.csproj", "{6A36CE0A-130C-4014-B264-9B5272282CD7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Client", "5 - Client", "{0ACC2D35-A901-409E-8294-0F1523348F8D}"
 EndProject
