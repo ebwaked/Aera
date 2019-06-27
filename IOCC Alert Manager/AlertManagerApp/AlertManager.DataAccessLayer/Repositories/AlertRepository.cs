@@ -16,7 +16,6 @@ namespace OperationsAlertManager.Repositories
     public class AlertRepository
     {
         private static readonly string _configConnectionString = ConfigurationManager.ConnectionStrings["AlertManagerRespository"].ToString();
-        private static readonly int _instanceId = int.Parse(ConfigurationManager.AppSettings["Instance"]);
         private readonly string _connectionString;
 
         public Exception RepositoryException { get; set; }
