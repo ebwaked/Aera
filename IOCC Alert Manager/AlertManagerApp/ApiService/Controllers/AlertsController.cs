@@ -1,12 +1,12 @@
 ﻿using OperationsAlertManager.Interfaces;
 using OperationsAlertManager.Models;
+using OperationsAlertManager.Repositories;
 using Common;
 using System;
-using System.Collections.ObjectModel;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace OperationsAlertManager.Controllers
 {
@@ -22,32 +22,18 @@ namespace OperationsAlertManager.Controllers
         // GET api/alerts
         public IList<Alert> GetAlerts()
         {
+            List<Alert> result = new List<Alert>();
             try
             {
-                List<Alert> alertDemoCollection = new List<Alert>();
-
-                for (int x = 1; x <= 500; x++)
-                {
-                    var dc = new Alert();
-                    dc.Id = x;
-                    dc.AlertDT = DateTime.Today.AddDays(x);
-                    dc.AlertTypeName = "Alert Type Name " + x.ToString();
-                    dc.Responses = x + 1;
-                    dc.FacilityName = x % 2 == 0 ?
-                        "Super Company " + x.ToString() : "Sub-par company " + x.ToString();
-                    dc.ReportedBy = "Reported Name " + x.ToString();
-                    dc.FacilityType = "Facility Type " + x.ToString();
-                    dc.FirstViewed = DateTime.Today.AddDays(x + 2);
-                    alertDemoCollection.Add(dc);
-                }
-
-                return alertDemoCollection;
+                var repository = new AlertRepository();
+                result = repository.GetAlerts().ToList();
             }
             catch (Exception ex)
             {
                 new Logger("Error TODO: " + ex.Message);
                 throw;
             }
+            return result;
         }
 
         // GET api/alerts/5
