@@ -8,7 +8,6 @@ namespace OperationsAlertManager.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        // TODO can i removed lines 12-27
         ObservableCollection<Alert> _alerts = new ObservableCollection<Alert>();
         public ObservableCollection<Alert> Alerts
         {
@@ -26,14 +25,15 @@ namespace OperationsAlertManager.ViewModels
             }
         }
 
+        // Slower way but may need if we run into UI blocking or crashes from uncaught errors *** V2 ***
         //public NotifyTaskCompletion<ObservableCollection<Alert>> NTCAlerts { get; private set; }
-        
+
         public MainViewModel()
         {
             Alerts = new ObservableCollection<Alert>();
             LoadCriticalAlertsTaskMethod();
 
-            // Slower way but may need if we run into UI blocking or crashes from uncaught errors - if changed to this change binding on XAML grid to " NTCAlerts.Result "
+            // Slower way but may need if we run into UI blocking or crashes from uncaught errors - if changed to this change binding on XAML grid to " NTCAlerts.Result " *** V2 ***
             //NTCAlerts = new NotifyTaskCompletion<ObservableCollection<Alert>>(LoadCriticalAlertsTaskMethod());
 
         }
@@ -44,7 +44,7 @@ namespace OperationsAlertManager.ViewModels
                     string.Empty, string.Empty) as ObservableCollection<Alert>;
         }
 
-        // Slower way but may need if we run into UI blocking or crashes from uncaught errors
+        // Slower way but may need if we run into UI blocking or crashes from uncaught errors *** V2 ***
         //private async Task<ObservableCollection<Alert>> LoadCriticalAlertsTaskMethod()
         //{
         //    return Alerts = await RestUtility.CallServiceAsync<ObservableCollection<Alert>>("https://localhost:44396/api/Alerts", string.Empty, null, "GET",

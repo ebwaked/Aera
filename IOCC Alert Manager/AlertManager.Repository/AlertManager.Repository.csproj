@@ -43,6 +43,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,16 +55,53 @@
   <ItemGroup>
     <Compile Include="Repositories\AlertRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AlertsManagerModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlertsManagerModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\AlertsManagerModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlertsManagerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\AlertsManagerModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlertsManagerModel.edmx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <EntityDeploy Include="Repositories\AlertsManagerModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AlertsManagerModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Repositories\AlertsManagerModel.edmx.diagram">
+      <DependentUpon>AlertsManagerModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AlertManager.Contracts\AlertManager.Contracts.csproj">
       <Project>{92ffc4f1-3648-4563-97e0-f1bf581e4ebf}</Project>
       <Name>AlertManager.Contracts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Repositories\AlertsManagerModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AlertsManagerModel.Context.cs</LastGenOutput>
+      <DependentUpon>AlertsManagerModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Repositories\AlertsManagerModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AlertsManagerModel.cs</LastGenOutput>
+      <DependentUpon>AlertsManagerModel.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -13,12 +13,6 @@ namespace OperationsAlertManager.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AlertsController : ApiController, IAlertApi
     {
-        // TODO
-        //public async Task<IHttpActionResult> GetAlerts()
-        //{
-        //    return Ok(alertArray);
-        //}
-
         // GET api/alerts
         public IList<Alert> GetAlerts()
         {

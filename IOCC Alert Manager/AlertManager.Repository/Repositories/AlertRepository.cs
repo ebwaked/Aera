@@ -22,17 +22,17 @@ namespace OperationsAlertManager.Repositories
 
         public AlertRepository()
         {
-            // TODO - uncomment when connecting to DB's (SIDE NOTE!!! FIND OUT WHY VAR ENTITYBUILDER KEEPS FAILING!!)
-            //if (!string.IsNullOrEmpty(_configConnectionString))
-            //{
-            //    var entityBuilder = new EntityConnectionStringBuilder
-            //    {
-            //        Provider = "System.Data.SqlClient",
-            //        ProviderConnectionString = _configConnectionString,
-            //        Metadata = ConfigurationManager.ConnectionStrings["GoWebEntities"].ConnectionString
-            //    };
-            //    _connectionString = entityBuilder.ToString();
-            //}
+            //TODO - uncomment when connecting to DB's (SIDE NOTE!!! FIND OUT WHY VAR ENTITYBUILDER KEEPS FAILING!!)
+            if (!string.IsNullOrEmpty(_configConnectionString))
+            {
+                var entityBuilder = new EntityConnectionStringBuilder
+                {
+                    Provider = "System.Data.SqlClient",
+                    ProviderConnectionString = _configConnectionString,
+                    Metadata = ConfigurationManager.ConnectionStrings["GoWebEntities"].ConnectionString
+                };
+                _connectionString = entityBuilder.ToString();
+            }
         }
 
         public IList<Alert> GetAlerts()
