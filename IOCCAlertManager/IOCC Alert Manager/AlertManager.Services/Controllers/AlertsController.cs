@@ -21,7 +21,6 @@ namespace OperationsAlertManager.Controllers
             List<Alert> result = new List<Alert>();
             try
             {
-                //throw new Exception("Test");
                 var repository = new AlertRepository();
                 result = repository.GetAlerts().ToList();
             }
@@ -40,13 +39,48 @@ namespace OperationsAlertManager.Controllers
             List<Alert> result = new List<Alert>();
             try
             {
-                throw new Exception("Test");
                 var repository = new AlertRepository();
                 result = repository.GetPendingAlertsByPriority(id).ToList();
             }
             catch (Exception ex)
             {
-                new Logger("Error in AlertsController - GetAlerts(): " + ex.Message, ex);
+                new Logger("Error in AlertsController - GetPendingAlertsByPriority(): " + ex.Message, ex);
+                throw;
+            }
+            return result;
+        }
+
+        // GET api/alerts/priority/5
+        [Route("api/alerts/inProgress")]
+        public IList<Alert> GetInProgressAlerts()
+        {
+            List<Alert> result = new List<Alert>();
+            try
+            {
+                var repository = new AlertRepository();
+                result = repository.GetInProgressAlerts().ToList();
+            }
+            catch (Exception ex)
+            {
+                new Logger("Error in AlertsController - GetInProgressAlerts(): " + ex.Message, ex);
+                throw;
+            }
+            return result;
+        }
+
+        // GET api/alerts/priority/5
+        [Route("api/alerts/resolved")]
+        public IList<Alert> GetResolvedAlerts(DateTime dttm)
+        {
+            List<Alert> result = new List<Alert>();
+            try
+            {
+                var repository = new AlertRepository();
+                result = repository.GetResolvedAlerts(dttm).ToList();
+            }
+            catch (Exception ex)
+            {
+                new Logger("Error in AlertsController - GetResolvedAlerts(): " + ex.Message, ex);
                 throw;
             }
             return result;

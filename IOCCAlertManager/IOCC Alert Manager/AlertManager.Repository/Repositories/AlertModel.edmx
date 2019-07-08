@@ -94,6 +94,7 @@
           <Parameter Name="ALRT_SS_CRE_DTTM" Type="datetime" Mode="In" />
           <Parameter Name="FAC_ID" Type="int" Mode="In" />
           <Parameter Name="FAC_NME" Type="varchar" Mode="In" />
+          <Parameter Name="FAC_TYPE_CDE" Type="varchar" Mode="In" />
           <Parameter Name="ALRT_SS_DTL_TXT" Type="varchar" Mode="In" />
           <Parameter Name="MGMT_PLNT_FAC_ID" Type="int" Mode="In" />
           <Parameter Name="RETVAL" Type="int" Mode="InOut" />
@@ -265,7 +266,7 @@
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AlertModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="AlertModelContainer" annotation:LazyLoadingEnabled="true">
           <FunctionImport Name="DEL_ALRT">
-            <Parameter Name="ALRT_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_EQPT_ITEM">
             <Parameter Name="ALRT_ID" Mode="In" Type="Int32" />
@@ -276,40 +277,40 @@
             <Parameter Name="ALRT_FAC_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_LIKELY_CAUSE">
-            <Parameter Name="ALRT_LIKELY_CAUSE_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_LIKELY_CAUSE_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_LIKELY_CAUSE_RMDTN">
-            <Parameter Name="ALRT_LIKELY_CAUSE_RMDTN_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_LIKELY_CAUSE_RMDTN_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_PRCS_TYPE">
-            <Parameter Name="ALRT_PRCS_TYPE_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_PRCS_TYPE_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_PRIO_TYPE">
-            <Parameter Name="ALRT_PRIO_TYPE_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_PRIO_TYPE_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_RESP">
-            <Parameter Name="ALRT_RESP_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_RESP_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_RESP_TYPE">
-            <Parameter Name="ALRT_RESP_TYPE_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_RESP_TYPE_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_RMDTN">
-            <Parameter Name="ALRT_RMDTN_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_RMDTN_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_RSLN_TYPE">
-            <Parameter Name="ALRT_RSLN_TYPE_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_RSLN_TYPE_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_SRCE_SYS">
-            <Parameter Name="ALRT_SS_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_SS_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_STAT_TYPE">
-            <Parameter Name="ALRT_STAT_TYPE_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_STAT_TYPE_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_TYPE">
-            <Parameter Name="ALRT_TYPE_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_TYPE_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DEL_ALRT_TYPE_SRCE_SYS">
-            <Parameter Name="ALRT_TYPE_SS_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_TYPE_SS_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="EXCEPTION_LOGGING">
             <Parameter Name="XCPN_MSG_TXT" Mode="In" Type="String" />
@@ -318,32 +319,28 @@
             <Parameter Name="XCPN_URL_TXT" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GET_ALRT_PRIO_TYPE" ReturnType="Collection(AlertModel.GET_ALRT_PRIO_TYPE_Result)">
-            <Parameter Name="IncludeInactive" Mode="In" Type="Boolean" />
+          <Parameter Name="IncludeInactive" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="GET_ALRT_RESP_TYPE" ReturnType="Collection(AlertModel.GET_ALRT_RESP_TYPE_Result)">
-            <Parameter Name="IncludeInactive" Mode="In" Type="Boolean" />
+          <Parameter Name="IncludeInactive" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="GET_ALRT_RSLN_TYPE" ReturnType="Collection(AlertModel.GET_ALRT_RSLN_TYPE_Result)">
-            <Parameter Name="IncludeInactive" Mode="In" Type="Boolean" />
+          <Parameter Name="IncludeInactive" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="GET_ALRT_TYPE" ReturnType="Collection(AlertModel.GET_ALRT_TYPE_Result)">
-            <Parameter Name="IncludeInactive" Mode="In" Type="Boolean" />
+          <Parameter Name="IncludeInactive" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="GetAlertByAlertId" ReturnType="Collection(AlertModel.GetAlertByAlertId_Result)">
-            <Parameter Name="ALRT_RESP_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_RESP_ID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="GetInProgressAlerts" ReturnType="Collection(AlertModel.GetInProgressAlerts_Result)" />
           <FunctionImport Name="GetPendingAlertCounts" ReturnType="Collection(AlertModel.GetPendingAlertCounts_Result)">
-            <Parameter Name="LST_READ_DTTM" Mode="InOut" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="GetPendingAlertsByPriority" ReturnType="Collection(AlertModel.GetPendingAlertsByPriority_Result)">
-            <Parameter Name="ALRT_PRIO_TYPE_ID" Mode="In" Type="Int32" />
+          <Parameter Name="LST_READ_DTTM" Mode="InOut" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="GetResolvedAlerts" ReturnType="Collection(AlertModel.GetResolvedAlerts_Result)">
-            <Parameter Name="STARTDATE" Mode="In" Type="DateTime" />
+          <Parameter Name="STARTDATE" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="GetResponsesByAlertId" ReturnType="Collection(AlertModel.GetResponsesByAlertId_Result)">
-            <Parameter Name="ALRT_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="INSERT_ALRT">
             <Parameter Name="ALRT_SS_NME" Mode="In" Type="String" />
@@ -352,15 +349,16 @@
             <Parameter Name="ALRT_SS_CRE_DTTM" Mode="In" Type="DateTime" />
             <Parameter Name="FAC_ID" Mode="In" Type="Int32" />
             <Parameter Name="FAC_NME" Mode="In" Type="String" />
+            <Parameter Name="FAC_TYPE_CDE" Mode="In" Type="String" />
             <Parameter Name="ALRT_SS_DTL_TXT" Mode="In" Type="String" />
             <Parameter Name="MGMT_PLNT_FAC_ID" Mode="In" Type="Int32" />
             <Parameter Name="RETVAL" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ResequenceLikelyCauses">
-            <Parameter Name="ALRT_TYPE_ID" Mode="In" Type="Int32" />
+          <Parameter Name="ALRT_TYPE_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="RethrowError">
-            <Parameter Name="ErrorProcedure" Mode="In" Type="String" />
+          <Parameter Name="ErrorProcedure" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="UPDT_ALRT">
             <Parameter Name="ALRT_ID" Mode="InOut" Type="Int32" />
@@ -516,6 +514,10 @@
             <Parameter Name="TERM_DTE" Mode="In" Type="DateTime" />
             <Parameter Name="USER_ID" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="GetPendingAlertsByPriority" ReturnType="Collection(AlertModel.GetPendingAlertsByPriority_Result)">
+          <Parameter Name="ALRT_PRIO_TYPE_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetInProgressAlerts" ReturnType="Collection(AlertModel.GetInProgressAlerts_Result)" />
         </EntityContainer>
         <ComplexType Name="GET_ALRT_PRIO_TYPE_Result">
           <Property Type="Int32" Name="ALRT_PRIO_TYPE_ID" Nullable="false" />
@@ -598,58 +600,11 @@
           <Property Type="String" Name="LST_MDFD_ID" Nullable="false" MaxLength="12" />
           <Property Type="DateTime" Name="LST_MDFD_DTTM" Nullable="false" Precision="23" />
         </ComplexType>
-        <ComplexType Name="GetInProgressAlerts_Result">
-          <Property Type="Int32" Name="ALRT_ID" Nullable="false" />
-          <Property Type="DateTime" Name="ALRT_CRE_DTTM" Nullable="false" Precision="23" />
-          <Property Type="Int32" Name="ALRT_CRTR_PRSN_BUS_ENTY_ID" Nullable="true" />
-          <Property Type="Int32" Name="ALRT_RPTD_PRSN_BUS_ENTY_ID" Nullable="true" />
-          <Property Type="String" Name="ALRT_SS_NME" Nullable="false" MaxLength="150" />
-          <Property Type="String" Name="ALRT_SS_DESC" Nullable="false" MaxLength="250" />
-          <Property Type="Int32" Name="ALRT_SS_ID" Nullable="true" />
-          <Property Type="Int32" Name="ALRT_PRIO_TYPE_ID" Nullable="false" />
-          <Property Type="String" Name="ALRT_PRIO_TYPE_NME" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="ALRT_PRIO_TYPE_DESC" Nullable="false" MaxLength="150" />
-          <Property Type="Int32" Name="ALRT_TYPE_ID" Nullable="false" />
-          <Property Type="String" Name="ALRT_TYPE_DESC" Nullable="true" MaxLength="800" />
-          <Property Type="String" Name="ALRT_TYPE_NME" Nullable="true" MaxLength="100" />
-          <Property Type="DateTime" Name="ALRT_RSLN_DTTM" Nullable="true" Precision="23" />
-          <Property Type="Int32" Name="ALRT_RSLN_TYPE_ID" Nullable="true" />
-          <Property Type="Int32" Name="RSLV_BY_PRSN_BUS_ENTY_ID" Nullable="true" />
-          <Property Type="String" Name="ALRT_RSLN_DESC" Nullable="true" MaxLength="250" />
-          <Property Type="String" Name="ALRT_NOTE_TXT" Nullable="true" MaxLength="250" />
-          <Property Type="String" Name="ALRT_SS_DTL_TXT" Nullable="true" MaxLength="2000" />
-          <Property Type="String" Name="ALRT_RSLN_TYPE_NME" Nullable="true" MaxLength="150" />
-          <Property Type="String" Name="ALRT_RSLN_TYPE_DESC" Nullable="true" MaxLength="250" />
-        </ComplexType>
         <ComplexType Name="GetPendingAlertCounts_Result">
           <Property Type="Int32" Name="ALRT_PRIO_TYPE_ID" Nullable="false" />
           <Property Type="String" Name="ALRT_PRIO_TYPE_NME" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="ALRT_PRIO_TYPE_DESC" Nullable="false" MaxLength="150" />
           <Property Type="Int32" Name="PEND_PRIO_CNT" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="GetPendingAlertsByPriority_Result">
-          <Property Type="Int32" Name="ALRT_ID" Nullable="false" />
-          <Property Type="DateTime" Name="ALRT_CRE_DTTM" Nullable="false" Precision="23" />
-          <Property Type="Int32" Name="ALRT_CRTR_PRSN_BUS_ENTY_ID" Nullable="true" />
-          <Property Type="Int32" Name="ALRT_RPTD_PRSN_BUS_ENTY_ID" Nullable="true" />
-          <Property Type="String" Name="ALRT_SS_NME" Nullable="false" MaxLength="150" />
-          <Property Type="String" Name="ALRT_SS_DESC" Nullable="false" MaxLength="250" />
-          <Property Type="Int32" Name="ALRT_SS_ID" Nullable="true" />
-          <Property Type="Int32" Name="ALRT_PRIO_TYPE_ID" Nullable="false" />
-          <Property Type="String" Name="ALRT_PRIO_TYPE_NME" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="ALRT_PRIO_TYPE_DESC" Nullable="false" MaxLength="150" />
-          <Property Type="Int32" Name="ALRT_TYPE_ID" Nullable="false" />
-          <Property Type="String" Name="ALRT_TYPE_DESC" Nullable="true" MaxLength="800" />
-          <Property Type="String" Name="ALRT_TYPE_NME" Nullable="true" MaxLength="100" />
-          <Property Type="DateTime" Name="ALRT_RSLN_DTTM" Nullable="true" Precision="23" />
-          <Property Type="Int32" Name="ALRT_RSLN_TYPE_ID" Nullable="true" />
-          <Property Type="Int32" Name="RSLV_BY_PRSN_BUS_ENTY_ID" Nullable="true" />
-          <Property Type="String" Name="ALRT_RSLN_DESC" Nullable="true" MaxLength="250" />
-          <Property Type="String" Name="ALRT_NOTE_TXT" Nullable="true" MaxLength="250" />
-          <Property Type="String" Name="ALRT_SS_DTL_TXT" Nullable="true" MaxLength="2000" />
-          <Property Type="String" Name="ALRT_RSLN_TYPE_NME" Nullable="true" MaxLength="150" />
-          <Property Type="String" Name="ALRT_RSLN_TYPE_DESC" Nullable="true" MaxLength="250" />
-          <Property Type="Int32" Name="RESP_CNT" Nullable="false" />
         </ComplexType>
         <ComplexType Name="GetResolvedAlerts_Result">
           <Property Type="Int32" Name="ALRT_ID" Nullable="false" />
@@ -691,6 +646,63 @@
           <Property Type="Int32" Name="ALRT_RESP_TYPE_ID" Nullable="false" />
           <Property Type="String" Name="ALRT_RESP_TYPE_NME" Nullable="false" MaxLength="150" />
           <Property Type="String" Name="ALRT_RESP_TYPE_DESC" Nullable="false" MaxLength="250" />
+        </ComplexType>
+        <ComplexType Name="GetPendingAlertsByPriority_Result">
+          <Property Type="Int32" Name="ALRT_ID" Nullable="false" />
+          <Property Type="DateTime" Name="ALRT_CRE_DTTM" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="ALRT_CRTR_PRSN_BUS_ENTY_ID" Nullable="true" />
+          <Property Type="Int32" Name="ALRT_RPTD_PRSN_BUS_ENTY_ID" Nullable="true" />
+          <Property Type="String" Name="ALRT_SS_NME" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="ALRT_SS_DESC" Nullable="false" MaxLength="250" />
+          <Property Type="DateTime" Name="CRE_DTTM" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="ALRT_SS_ID" Nullable="true" />
+          <Property Type="Int32" Name="ALRT_PRIO_TYPE_ID" Nullable="false" />
+          <Property Type="String" Name="ALRT_PRIO_TYPE_NME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ALRT_PRIO_TYPE_DESC" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="ALRT_TYPE_ID" Nullable="false" />
+          <Property Type="String" Name="ALRT_TYPE_DESC" Nullable="true" MaxLength="800" />
+          <Property Type="String" Name="ALRT_TYPE_NME" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="ALRT_RSLN_DTTM" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ALRT_RSLN_TYPE_ID" Nullable="true" />
+          <Property Type="Int32" Name="RSLV_BY_PRSN_BUS_ENTY_ID" Nullable="true" />
+          <Property Type="String" Name="ALRT_RSLN_DESC" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="ALRT_NOTE_TXT" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="ALRT_SS_DTL_TXT" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="ALRT_RSLN_TYPE_NME" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="ALRT_RSLN_TYPE_DESC" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="RESP_CNT" Nullable="false" />
+          <Property Type="Int32" Name="FAC_ID" Nullable="true" />
+          <Property Type="String" Name="FAC_NME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FAC_TYPE_CDE" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="EQPT_ITEM_DESC" Nullable="true" MaxLength="250" />
+        </ComplexType>
+        <ComplexType Name="GetInProgressAlerts_Result">
+          <Property Type="Int32" Name="ALRT_ID" Nullable="false" />
+          <Property Type="DateTime" Name="ALRT_CRE_DTTM" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="ALRT_CRTR_PRSN_BUS_ENTY_ID" Nullable="true" />
+          <Property Type="Int32" Name="ALRT_RPTD_PRSN_BUS_ENTY_ID" Nullable="true" />
+          <Property Type="String" Name="ALRT_SS_NME" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="ALRT_SS_DESC" Nullable="false" MaxLength="250" />
+          <Property Type="DateTime" Name="CRE_DTTM" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="ALRT_SS_ID" Nullable="true" />
+          <Property Type="Int32" Name="ALRT_PRIO_TYPE_ID" Nullable="false" />
+          <Property Type="String" Name="ALRT_PRIO_TYPE_NME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ALRT_PRIO_TYPE_DESC" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="ALRT_TYPE_ID" Nullable="false" />
+          <Property Type="String" Name="ALRT_TYPE_DESC" Nullable="true" MaxLength="800" />
+          <Property Type="String" Name="ALRT_TYPE_NME" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="ALRT_RSLN_DTTM" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ALRT_RSLN_TYPE_ID" Nullable="true" />
+          <Property Type="Int32" Name="RSLV_BY_PRSN_BUS_ENTY_ID" Nullable="true" />
+          <Property Type="String" Name="ALRT_RSLN_DESC" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="ALRT_NOTE_TXT" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="ALRT_SS_DTL_TXT" Nullable="true" MaxLength="2000" />
+          <Property Type="String" Name="ALRT_RSLN_TYPE_NME" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="ALRT_RSLN_TYPE_DESC" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="FAC_ID" Nullable="true" />
+          <Property Type="String" Name="FAC_NME" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EQPT_ITEM_DESC" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="RESP_CNT" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -817,33 +829,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetInProgressAlerts" FunctionName="AlertModel.Store.GetInProgressAlerts">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="AlertModel.GetInProgressAlerts_Result">
-                <ScalarProperty Name="ALRT_ID" ColumnName="ALRT_ID" />
-                <ScalarProperty Name="ALRT_CRE_DTTM" ColumnName="ALRT_CRE_DTTM" />
-                <ScalarProperty Name="ALRT_CRTR_PRSN_BUS_ENTY_ID" ColumnName="ALRT_CRTR_PRSN_BUS_ENTY_ID" />
-                <ScalarProperty Name="ALRT_RPTD_PRSN_BUS_ENTY_ID" ColumnName="ALRT_RPTD_PRSN_BUS_ENTY_ID" />
-                <ScalarProperty Name="ALRT_SS_NME" ColumnName="ALRT_SS_NME" />
-                <ScalarProperty Name="ALRT_SS_DESC" ColumnName="ALRT_SS_DESC" />
-                <ScalarProperty Name="ALRT_SS_ID" ColumnName="ALRT_SS_ID" />
-                <ScalarProperty Name="ALRT_PRIO_TYPE_ID" ColumnName="ALRT_PRIO_TYPE_ID" />
-                <ScalarProperty Name="ALRT_PRIO_TYPE_NME" ColumnName="ALRT_PRIO_TYPE_NME" />
-                <ScalarProperty Name="ALRT_PRIO_TYPE_DESC" ColumnName="ALRT_PRIO_TYPE_DESC" />
-                <ScalarProperty Name="ALRT_TYPE_ID" ColumnName="ALRT_TYPE_ID" />
-                <ScalarProperty Name="ALRT_TYPE_DESC" ColumnName="ALRT_TYPE_DESC" />
-                <ScalarProperty Name="ALRT_TYPE_NME" ColumnName="ALRT_TYPE_NME" />
-                <ScalarProperty Name="ALRT_RSLN_DTTM" ColumnName="ALRT_RSLN_DTTM" />
-                <ScalarProperty Name="ALRT_RSLN_TYPE_ID" ColumnName="ALRT_RSLN_TYPE_ID" />
-                <ScalarProperty Name="RSLV_BY_PRSN_BUS_ENTY_ID" ColumnName="RSLV_BY_PRSN_BUS_ENTY_ID" />
-                <ScalarProperty Name="ALRT_RSLN_DESC" ColumnName="ALRT_RSLN_DESC" />
-                <ScalarProperty Name="ALRT_NOTE_TXT" ColumnName="ALRT_NOTE_TXT" />
-                <ScalarProperty Name="ALRT_SS_DTL_TXT" ColumnName="ALRT_SS_DTL_TXT" />
-                <ScalarProperty Name="ALRT_RSLN_TYPE_NME" ColumnName="ALRT_RSLN_TYPE_NME" />
-                <ScalarProperty Name="ALRT_RSLN_TYPE_DESC" ColumnName="ALRT_RSLN_TYPE_DESC" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetPendingAlertCounts" FunctionName="AlertModel.Store.GetPendingAlertCounts">
             <ResultMapping>
               <ComplexTypeMapping TypeName="AlertModel.GetPendingAlertCounts_Result">
@@ -851,34 +836,6 @@
                 <ScalarProperty Name="ALRT_PRIO_TYPE_NME" ColumnName="ALRT_PRIO_TYPE_NME" />
                 <ScalarProperty Name="ALRT_PRIO_TYPE_DESC" ColumnName="ALRT_PRIO_TYPE_DESC" />
                 <ScalarProperty Name="PEND_PRIO_CNT" ColumnName="PEND_PRIO_CNT" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetPendingAlertsByPriority" FunctionName="AlertModel.Store.GetPendingAlertsByPriority">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="AlertModel.GetPendingAlertsByPriority_Result">
-                <ScalarProperty Name="ALRT_ID" ColumnName="ALRT_ID" />
-                <ScalarProperty Name="ALRT_CRE_DTTM" ColumnName="ALRT_CRE_DTTM" />
-                <ScalarProperty Name="ALRT_CRTR_PRSN_BUS_ENTY_ID" ColumnName="ALRT_CRTR_PRSN_BUS_ENTY_ID" />
-                <ScalarProperty Name="ALRT_RPTD_PRSN_BUS_ENTY_ID" ColumnName="ALRT_RPTD_PRSN_BUS_ENTY_ID" />
-                <ScalarProperty Name="ALRT_SS_NME" ColumnName="ALRT_SS_NME" />
-                <ScalarProperty Name="ALRT_SS_DESC" ColumnName="ALRT_SS_DESC" />
-                <ScalarProperty Name="ALRT_SS_ID" ColumnName="ALRT_SS_ID" />
-                <ScalarProperty Name="ALRT_PRIO_TYPE_ID" ColumnName="ALRT_PRIO_TYPE_ID" />
-                <ScalarProperty Name="ALRT_PRIO_TYPE_NME" ColumnName="ALRT_PRIO_TYPE_NME" />
-                <ScalarProperty Name="ALRT_PRIO_TYPE_DESC" ColumnName="ALRT_PRIO_TYPE_DESC" />
-                <ScalarProperty Name="ALRT_TYPE_ID" ColumnName="ALRT_TYPE_ID" />
-                <ScalarProperty Name="ALRT_TYPE_DESC" ColumnName="ALRT_TYPE_DESC" />
-                <ScalarProperty Name="ALRT_TYPE_NME" ColumnName="ALRT_TYPE_NME" />
-                <ScalarProperty Name="ALRT_RSLN_DTTM" ColumnName="ALRT_RSLN_DTTM" />
-                <ScalarProperty Name="ALRT_RSLN_TYPE_ID" ColumnName="ALRT_RSLN_TYPE_ID" />
-                <ScalarProperty Name="RSLV_BY_PRSN_BUS_ENTY_ID" ColumnName="RSLV_BY_PRSN_BUS_ENTY_ID" />
-                <ScalarProperty Name="ALRT_RSLN_DESC" ColumnName="ALRT_RSLN_DESC" />
-                <ScalarProperty Name="ALRT_NOTE_TXT" ColumnName="ALRT_NOTE_TXT" />
-                <ScalarProperty Name="ALRT_SS_DTL_TXT" ColumnName="ALRT_SS_DTL_TXT" />
-                <ScalarProperty Name="ALRT_RSLN_TYPE_NME" ColumnName="ALRT_RSLN_TYPE_NME" />
-                <ScalarProperty Name="ALRT_RSLN_TYPE_DESC" ColumnName="ALRT_RSLN_TYPE_DESC" />
-                <ScalarProperty Name="RESP_CNT" ColumnName="RESP_CNT" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -951,6 +908,71 @@
           <FunctionImportMapping FunctionImportName="UPDT_ALRT_STATUS" FunctionName="AlertModel.Store.UPDT_ALRT_STATUS" />
           <FunctionImportMapping FunctionImportName="UPDT_ALRT_TYPE" FunctionName="AlertModel.Store.UPDT_ALRT_TYPE" />
           <FunctionImportMapping FunctionImportName="UPDT_ALRT_TYPE_SRCE_SYS" FunctionName="AlertModel.Store.UPDT_ALRT_TYPE_SRCE_SYS" />
+          <FunctionImportMapping FunctionImportName="GetPendingAlertsByPriority" FunctionName="AlertModel.Store.GetPendingAlertsByPriority">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AlertModel.GetPendingAlertsByPriority_Result">
+                <ScalarProperty Name="ALRT_ID" ColumnName="ALRT_ID" />
+                <ScalarProperty Name="ALRT_CRE_DTTM" ColumnName="ALRT_CRE_DTTM" />
+                <ScalarProperty Name="ALRT_CRTR_PRSN_BUS_ENTY_ID" ColumnName="ALRT_CRTR_PRSN_BUS_ENTY_ID" />
+                <ScalarProperty Name="ALRT_RPTD_PRSN_BUS_ENTY_ID" ColumnName="ALRT_RPTD_PRSN_BUS_ENTY_ID" />
+                <ScalarProperty Name="ALRT_SS_NME" ColumnName="ALRT_SS_NME" />
+                <ScalarProperty Name="ALRT_SS_DESC" ColumnName="ALRT_SS_DESC" />
+                <ScalarProperty Name="CRE_DTTM" ColumnName="CRE_DTTM" />
+                <ScalarProperty Name="ALRT_SS_ID" ColumnName="ALRT_SS_ID" />
+                <ScalarProperty Name="ALRT_PRIO_TYPE_ID" ColumnName="ALRT_PRIO_TYPE_ID" />
+                <ScalarProperty Name="ALRT_PRIO_TYPE_NME" ColumnName="ALRT_PRIO_TYPE_NME" />
+                <ScalarProperty Name="ALRT_PRIO_TYPE_DESC" ColumnName="ALRT_PRIO_TYPE_DESC" />
+                <ScalarProperty Name="ALRT_TYPE_ID" ColumnName="ALRT_TYPE_ID" />
+                <ScalarProperty Name="ALRT_TYPE_DESC" ColumnName="ALRT_TYPE_DESC" />
+                <ScalarProperty Name="ALRT_TYPE_NME" ColumnName="ALRT_TYPE_NME" />
+                <ScalarProperty Name="ALRT_RSLN_DTTM" ColumnName="ALRT_RSLN_DTTM" />
+                <ScalarProperty Name="ALRT_RSLN_TYPE_ID" ColumnName="ALRT_RSLN_TYPE_ID" />
+                <ScalarProperty Name="RSLV_BY_PRSN_BUS_ENTY_ID" ColumnName="RSLV_BY_PRSN_BUS_ENTY_ID" />
+                <ScalarProperty Name="ALRT_RSLN_DESC" ColumnName="ALRT_RSLN_DESC" />
+                <ScalarProperty Name="ALRT_NOTE_TXT" ColumnName="ALRT_NOTE_TXT" />
+                <ScalarProperty Name="ALRT_SS_DTL_TXT" ColumnName="ALRT_SS_DTL_TXT" />
+                <ScalarProperty Name="ALRT_RSLN_TYPE_NME" ColumnName="ALRT_RSLN_TYPE_NME" />
+                <ScalarProperty Name="ALRT_RSLN_TYPE_DESC" ColumnName="ALRT_RSLN_TYPE_DESC" />
+                <ScalarProperty Name="RESP_CNT" ColumnName="RESP_CNT" />
+                <ScalarProperty Name="FAC_ID" ColumnName="FAC_ID" />
+                <ScalarProperty Name="FAC_NME" ColumnName="FAC_NME" />
+                <ScalarProperty Name="FAC_TYPE_CDE" ColumnName="FAC_TYPE_CDE" />
+                <ScalarProperty Name="EQPT_ITEM_DESC" ColumnName="EQPT_ITEM_DESC" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetInProgressAlerts" FunctionName="AlertModel.Store.GetInProgressAlerts">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AlertModel.GetInProgressAlerts_Result">
+                <ScalarProperty Name="ALRT_ID" ColumnName="ALRT_ID" />
+                <ScalarProperty Name="ALRT_CRE_DTTM" ColumnName="ALRT_CRE_DTTM" />
+                <ScalarProperty Name="ALRT_CRTR_PRSN_BUS_ENTY_ID" ColumnName="ALRT_CRTR_PRSN_BUS_ENTY_ID" />
+                <ScalarProperty Name="ALRT_RPTD_PRSN_BUS_ENTY_ID" ColumnName="ALRT_RPTD_PRSN_BUS_ENTY_ID" />
+                <ScalarProperty Name="ALRT_SS_NME" ColumnName="ALRT_SS_NME" />
+                <ScalarProperty Name="ALRT_SS_DESC" ColumnName="ALRT_SS_DESC" />
+                <ScalarProperty Name="CRE_DTTM" ColumnName="CRE_DTTM" />
+                <ScalarProperty Name="ALRT_SS_ID" ColumnName="ALRT_SS_ID" />
+                <ScalarProperty Name="ALRT_PRIO_TYPE_ID" ColumnName="ALRT_PRIO_TYPE_ID" />
+                <ScalarProperty Name="ALRT_PRIO_TYPE_NME" ColumnName="ALRT_PRIO_TYPE_NME" />
+                <ScalarProperty Name="ALRT_PRIO_TYPE_DESC" ColumnName="ALRT_PRIO_TYPE_DESC" />
+                <ScalarProperty Name="ALRT_TYPE_ID" ColumnName="ALRT_TYPE_ID" />
+                <ScalarProperty Name="ALRT_TYPE_DESC" ColumnName="ALRT_TYPE_DESC" />
+                <ScalarProperty Name="ALRT_TYPE_NME" ColumnName="ALRT_TYPE_NME" />
+                <ScalarProperty Name="ALRT_RSLN_DTTM" ColumnName="ALRT_RSLN_DTTM" />
+                <ScalarProperty Name="ALRT_RSLN_TYPE_ID" ColumnName="ALRT_RSLN_TYPE_ID" />
+                <ScalarProperty Name="RSLV_BY_PRSN_BUS_ENTY_ID" ColumnName="RSLV_BY_PRSN_BUS_ENTY_ID" />
+                <ScalarProperty Name="ALRT_RSLN_DESC" ColumnName="ALRT_RSLN_DESC" />
+                <ScalarProperty Name="ALRT_NOTE_TXT" ColumnName="ALRT_NOTE_TXT" />
+                <ScalarProperty Name="ALRT_SS_DTL_TXT" ColumnName="ALRT_SS_DTL_TXT" />
+                <ScalarProperty Name="ALRT_RSLN_TYPE_NME" ColumnName="ALRT_RSLN_TYPE_NME" />
+                <ScalarProperty Name="ALRT_RSLN_TYPE_DESC" ColumnName="ALRT_RSLN_TYPE_DESC" />
+                <ScalarProperty Name="FAC_ID" ColumnName="FAC_ID" />
+                <ScalarProperty Name="FAC_NME" ColumnName="FAC_NME" />
+                <ScalarProperty Name="EQPT_ITEM_DESC" ColumnName="EQPT_ITEM_DESC" />
+                <ScalarProperty Name="RESP_CNT" ColumnName="RESP_CNT" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

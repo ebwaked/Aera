@@ -27,7 +27,7 @@
                 <TabItem Header="Critical (3)" MinHeight="40" MinWidth="100" FontSize="20">
                     <StackPanel>
                         <telerik:RadGridView x:Name="CriticalAlertGV"
-							 ItemsSource="{Binding Alerts}"
+							 ItemsSource="{Binding CriticalAlerts}"
 							 Margin="0" GroupRenderMode="Flat"
 											 ColumnWidth="*" Height="475"
 											 SelectionMode="Extended"
@@ -38,46 +38,225 @@
 							 CanUserFreezeColumns="False"
 							 CanUserResizeColumns="False">
                             <telerik:RadGridView.Columns>
-                                <telerik:GridViewDataColumn Header="AlertDT"
+                                <telerik:GridViewDataColumn Header="Alert Date"
 															DataMemberBinding="{Binding AlertDT}"/>
-                                <telerik:GridViewDataColumn Header="AlertTypeName"
+                                <telerik:GridViewDataColumn Header="Alert Type"
 															DataMemberBinding="{Binding AlertTypeName}"/>
-                                <telerik:GridViewDataColumn Header="Responses"
-															DataMemberBinding="{Binding Responses}"/>
-                                <telerik:GridViewDataColumn Header="FacilityName"
+                                <telerik:GridViewDataColumn Header="Facility"
 															DataMemberBinding="{Binding FacilityName}"/>
-                                <telerik:GridViewDataColumn Header="ReportedBy"
-															DataMemberBinding="{Binding ReportedBy}"/>
-                                <telerik:GridViewDataColumn Header="FacilityType"
-															DataMemberBinding="{Binding FacilityType}"/>
-                                <telerik:GridViewDataColumn Header="FirstViewed"
-															DataMemberBinding="{Binding FirstViewed}"/>
+                                <telerik:GridViewDataColumn Header="Equipment"
+															DataMemberBinding="{Binding Equipment}"/>
+                                <telerik:GridViewDataColumn Header="Source System"
+															DataMemberBinding="{Binding SourceSystem}"/>
+                                <telerik:GridViewDataColumn Header="SS Create Date"
+															DataMemberBinding="{Binding SourceSystemCreateDate}"/>
+                                <telerik:GridViewDataColumn Header="SS Detail"
+															DataMemberBinding="{Binding SourceSystemDetail}"/>
                             </telerik:RadGridView.Columns>
                         </telerik:RadGridView>
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="Major (1)" MinHeight="40" MinWidth="150" FontSize="20">
-                    <Canvas>
-                        <!--<DataGrid Height="500" Width="1800" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding Source={StaticResource AlertsCollectionMajor}}" IsSynchronizedWithCurrentItem="True" />-->
-                    </Canvas>
+                    <StackPanel>
+                        <telerik:RadGridView x:Name="MajorAlertGV"
+							 ItemsSource="{Binding MajorAlerts}"
+							 Margin="0" GroupRenderMode="Flat"
+											 ColumnWidth="*" Height="475"
+											 SelectionMode="Extended"
+							 RowIndicatorVisibility="Collapsed"
+							 IsReadOnly="True"
+							 ShowColumnSortIndexes="True"
+							 AutoGenerateColumns="False"
+							 CanUserFreezeColumns="False"
+							 CanUserResizeColumns="False">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Header="Alert Date"
+															DataMemberBinding="{Binding AlertDT}"/>
+                                <telerik:GridViewDataColumn Header="Alert Type"
+															DataMemberBinding="{Binding AlertTypeName}"/>
+                                <telerik:GridViewDataColumn Header="Facility"
+															DataMemberBinding="{Binding FacilityName}"/>
+                                <telerik:GridViewDataColumn Header="Equipment"
+															DataMemberBinding="{Binding Equipment}"/>
+                                <telerik:GridViewDataColumn Header="Source System"
+															DataMemberBinding="{Binding SourceSystem}"/>
+                                <telerik:GridViewDataColumn Header="SS Create Date"
+															DataMemberBinding="{Binding SourceSystemCreateDate}"/>
+                                <telerik:GridViewDataColumn Header="SS Detail"
+															DataMemberBinding="{Binding SourceSystemDetail}"/>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </StackPanel>
                 </TabItem>
                 <TabItem Header="Minor (5)" MinHeight="40" MinWidth="150" FontSize="20">
-                    <Label Content="Content goes here..." />
+                    <StackPanel>
+                        <telerik:RadGridView x:Name="MinorAlertGV"
+							 ItemsSource="{Binding MinorAlerts}"
+							 Margin="0" GroupRenderMode="Flat"
+											 ColumnWidth="*" Height="475"
+											 SelectionMode="Extended"
+							 RowIndicatorVisibility="Collapsed"
+							 IsReadOnly="True"
+							 ShowColumnSortIndexes="True"
+							 AutoGenerateColumns="False"
+							 CanUserFreezeColumns="False"
+							 CanUserResizeColumns="False">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Header="Alert Date"
+															DataMemberBinding="{Binding AlertDT}"/>
+                                <telerik:GridViewDataColumn Header="Alert Type"
+															DataMemberBinding="{Binding AlertTypeName}"/>
+                                <telerik:GridViewDataColumn Header="Facility"
+															DataMemberBinding="{Binding FacilityName}"/>
+                                <telerik:GridViewDataColumn Header="Equipment"
+															DataMemberBinding="{Binding Equipment}"/>
+                                <telerik:GridViewDataColumn Header="Source System"
+															DataMemberBinding="{Binding SourceSystem}"/>
+                                <telerik:GridViewDataColumn Header="SS Create Date"
+															DataMemberBinding="{Binding SourceSystemCreateDate}"/>
+                                <telerik:GridViewDataColumn Header="SS Detail"
+															DataMemberBinding="{Binding SourceSystemDetail}"/>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </StackPanel>
                 </TabItem>
                 <TabItem Header="Warning (2)" MinHeight="40" MinWidth="150" FontSize="20">
-                    <Label Content="Content goes here..." />
+                    <StackPanel>
+                        <telerik:RadGridView x:Name="WarningAlertGV"
+							 ItemsSource="{Binding WarningAlerts}"
+							 Margin="0" GroupRenderMode="Flat"
+											 ColumnWidth="*" Height="475"
+											 SelectionMode="Extended"
+							 RowIndicatorVisibility="Collapsed"
+							 IsReadOnly="True"
+							 ShowColumnSortIndexes="True"
+							 AutoGenerateColumns="False"
+							 CanUserFreezeColumns="False"
+							 CanUserResizeColumns="False">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Header="Alert Date"
+															DataMemberBinding="{Binding AlertDT}"/>
+                                <telerik:GridViewDataColumn Header="Alert Type"
+															DataMemberBinding="{Binding AlertTypeName}"/>
+                                <telerik:GridViewDataColumn Header="Facility"
+															DataMemberBinding="{Binding FacilityName}"/>
+                                <telerik:GridViewDataColumn Header="Equipment"
+															DataMemberBinding="{Binding Equipment}"/>
+                                <telerik:GridViewDataColumn Header="Source System"
+															DataMemberBinding="{Binding SourceSystem}"/>
+                                <telerik:GridViewDataColumn Header="SS Create Date"
+															DataMemberBinding="{Binding SourceSystemCreateDate}"/>
+                                <telerik:GridViewDataColumn Header="SS Detail"
+															DataMemberBinding="{Binding SourceSystemDetail}"/>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </StackPanel>
                 </TabItem>
                 <TabItem Header="Information (1034)" MinHeight="40" MinWidth="150" FontSize="20">
-                    <Label Content="Content goes here..." />
-                </TabItem>
-                <TabItem Header="All (1045)" MinHeight="40" MinWidth="150" FontSize="20">
-                    <Label Content="Content goes here..." />
+                    <StackPanel>
+                        <telerik:RadGridView x:Name="InformationAlertGV"
+							 ItemsSource="{Binding InformationAlerts}"
+							 Margin="0" GroupRenderMode="Flat"
+											 ColumnWidth="*" Height="475"
+											 SelectionMode="Extended"
+							 RowIndicatorVisibility="Collapsed"
+							 IsReadOnly="True"
+							 ShowColumnSortIndexes="True"
+							 AutoGenerateColumns="False"
+							 CanUserFreezeColumns="False"
+							 CanUserResizeColumns="False">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Header="Alert Date"
+															DataMemberBinding="{Binding AlertDT}"/>
+                                <telerik:GridViewDataColumn Header="Alert Type"
+															DataMemberBinding="{Binding AlertTypeName}"/>
+                                <telerik:GridViewDataColumn Header="Facility"
+															DataMemberBinding="{Binding FacilityName}"/>
+                                <telerik:GridViewDataColumn Header="Equipment"
+															DataMemberBinding="{Binding Equipment}"/>
+                                <telerik:GridViewDataColumn Header="Source System"
+															DataMemberBinding="{Binding SourceSystem}"/>
+                                <telerik:GridViewDataColumn Header="SS Create Date"
+															DataMemberBinding="{Binding SourceSystemCreateDate}"/>
+                                <telerik:GridViewDataColumn Header="SS Detail"
+															DataMemberBinding="{Binding SourceSystemDetail}"/>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </StackPanel>
                 </TabItem>
                 <TabItem Header="In Progress" MinHeight="40" MinWidth="150" FontSize="20">
-                    <Label Content="Content goes here..." />
+                    <StackPanel>
+                        <telerik:RadGridView x:Name="InprogressAlertGV"
+							 ItemsSource="{Binding InProgressAlerts}"
+							 Margin="0" GroupRenderMode="Flat"
+											 ColumnWidth="*" Height="475"
+											 SelectionMode="Extended"
+							 RowIndicatorVisibility="Collapsed"
+							 IsReadOnly="True"
+							 ShowColumnSortIndexes="True"
+							 AutoGenerateColumns="False"
+							 CanUserFreezeColumns="False"
+							 CanUserResizeColumns="False">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Header="Alert Date"
+															DataMemberBinding="{Binding AlertDT}"/>
+                                <telerik:GridViewDataColumn Header="Priority"
+															DataMemberBinding="{Binding AlertPriority}"/>
+                                <telerik:GridViewDataColumn Header="Alert Type"
+															DataMemberBinding="{Binding AlertTypeName}"/>
+                                <telerik:GridViewDataColumn Header="Responses"
+															DataMemberBinding="{Binding NumResponses}"/>
+                                <telerik:GridViewDataColumn Header="Facility"
+															DataMemberBinding="{Binding FacilityName}"/>
+                                <telerik:GridViewDataColumn Header="Equipment"
+															DataMemberBinding="{Binding Equipment}"/>
+                                <telerik:GridViewDataColumn Header="Source System"
+															DataMemberBinding="{Binding SourceSystem}"/>
+                                <telerik:GridViewDataColumn Header="SS Create Date"
+															DataMemberBinding="{Binding SourceSystemCreateDate}"/>
+                                <telerik:GridViewDataColumn Header="SS Detail"
+															DataMemberBinding="{Binding SourceSystemDetail}"/>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </StackPanel>
                 </TabItem>
                 <TabItem Header="Resolved" MinHeight="40" MinWidth="100" FontSize="20">
-                    <Label Content="Content goes here..." />
+                    <StackPanel>
+                        <telerik:RadGridView x:Name="ResolvedAlertGV"
+							 ItemsSource="{Binding ResolvedAlerts}"
+							 Margin="0" GroupRenderMode="Flat"
+											 ColumnWidth="*" Height="475"
+											 SelectionMode="Extended"
+							 RowIndicatorVisibility="Collapsed"
+							 IsReadOnly="True"
+							 ShowColumnSortIndexes="True"
+							 AutoGenerateColumns="False"
+							 CanUserFreezeColumns="False"
+							 CanUserResizeColumns="False">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewDataColumn Header="Alert Date"
+															DataMemberBinding="{Binding AlertDT}"/>
+                                <telerik:GridViewDataColumn Header="Priority"
+															DataMemberBinding="{Binding AlertPriority}"/>
+                                <telerik:GridViewDataColumn Header="Alert Type"
+															DataMemberBinding="{Binding AlertTypeName}"/>
+                                <telerik:GridViewDataColumn Header="Resolved Date"
+															DataMemberBinding="{Binding ResolvedDT}"/>
+                                <telerik:GridViewDataColumn Header="Resolution Type"
+															DataMemberBinding="{Binding ResolutionType}"/>
+                                <telerik:GridViewDataColumn Header="Resolved By"
+															DataMemberBinding="{Binding ResolvedBy}"/>
+                                <telerik:GridViewDataColumn Header="Responses"
+															DataMemberBinding="{Binding NumResponses}"/>
+                                <telerik:GridViewDataColumn Header="Facility"
+															DataMemberBinding="{Binding FacilityName}"/>
+                                <telerik:GridViewDataColumn Header="Equipment"
+															DataMemberBinding="{Binding Equipment}"/>
+                                <telerik:GridViewDataColumn Header="Source System"
+															DataMemberBinding="{Binding SourceSystem}"/>
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </StackPanel>
                 </TabItem>
             </TabControl>
         </StackPanel>

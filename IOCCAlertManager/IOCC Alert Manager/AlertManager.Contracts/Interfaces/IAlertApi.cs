@@ -1,4 +1,5 @@
 ﻿using OperationsAlertManager.Models;
+using System;
 using System.Collections.Generic;
 
 namespace OperationsAlertManager.Interfaces
@@ -8,8 +9,14 @@ namespace OperationsAlertManager.Interfaces
         // GET api/alerts
         IList<Alert> GetAlerts();
 
-        // GET api/alerts/5
+        // GET api/alerts/priority/5
         IList<Alert> GetPendingAlertsByPriority(int id);
+
+        // GET api/alerts/inProgress
+        IList<Alert> GetInProgressAlerts();
+
+        // GET api/alerts/resolved
+        IList<Alert> GetResolvedAlerts(DateTime dttm);
 
         // GET api/alerts/5
         string GetAlert(int id);

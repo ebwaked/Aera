@@ -19,6 +19,7 @@ namespace OperationsAlertManager.Data.Repositories
         public Nullable<int> ALRT_RPTD_PRSN_BUS_ENTY_ID { get; set; }
         public string ALRT_SS_NME { get; set; }
         public string ALRT_SS_DESC { get; set; }
+        public System.DateTime CRE_DTTM { get; set; }
         public Nullable<int> ALRT_SS_ID { get; set; }
         public int ALRT_PRIO_TYPE_ID { get; set; }
         public string ALRT_PRIO_TYPE_NME { get; set; }
@@ -35,5 +36,9 @@ namespace OperationsAlertManager.Data.Repositories
         public string ALRT_RSLN_TYPE_NME { get; set; }
         public string ALRT_RSLN_TYPE_DESC { get; set; }
         public int RESP_CNT { get; set; }
+        public Nullable<int> FAC_ID { get; set; }
+        public string FAC_NME { get; set; }
+        public string FAC_TYPE_CDE { get; set; }
+        public string EQPT_ITEM_DESC { get; set; }
     }
 }

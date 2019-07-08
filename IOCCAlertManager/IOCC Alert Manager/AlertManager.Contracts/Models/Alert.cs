@@ -24,12 +24,17 @@ namespace OperationsAlertManager.Models
 
         private int id;
         private DateTime alertDT;
+        private string alertPriority;
         private string alertTypeName;
-        private int responses;
+        private DateTime resolvedDT;
+        private string resolutionType;
+        private string resolvedBy;
+        private int numResponses;
         private string facilityName;
-        private string reportedBy;
-        private string facilityType;
-        private DateTime firstViewed;
+        private string equipment;
+        private string sourceSystem;
+        private DateTime sourceSystemCreateDate;
+        private string sourceSystemDetail;
         private ObservableCollection<Alert> alerts;
 
         #endregion
@@ -60,6 +65,19 @@ namespace OperationsAlertManager.Models
             }
         }
 
+        public string AlertPriority
+        {
+            get { return alertPriority; }
+            set
+            {
+                if (value != this.alertPriority)
+                {
+                    alertPriority = value;
+                    NotifyPropertChanged("AlertPriority");
+                }
+            }
+        }
+
         public string AlertTypeName
         {
             get { return alertTypeName; }
@@ -73,15 +91,54 @@ namespace OperationsAlertManager.Models
             }
         }
 
-        public int Responses
+        public DateTime ResolvedDT
         {
-            get { return responses; }
+            get { return resolvedDT; }
             set
             {
-                if (value != this.responses)
+                if (value != this.resolvedDT)
                 {
-                    responses = value;
-                    NotifyPropertChanged("Responses");
+                    resolvedDT = value;
+                    NotifyPropertChanged("ResolvedDT");
+                }
+            }
+        }
+
+        public string ResolutionType
+        {
+            get { return resolutionType; }
+            set
+            {
+                if (value != this.resolutionType)
+                {
+                    resolutionType = value;
+                    NotifyPropertChanged("ResolutionType");
+                }
+            }
+        }
+
+        public string ResolvedBy
+        {
+            get { return resolvedBy; }
+            set
+            {
+                if (value != this.resolvedBy)
+                {
+                    resolvedBy = value;
+                    NotifyPropertChanged("ResolvedBy");
+                }
+            }
+        }
+
+        public int NumResponses
+        {
+            get { return numResponses; }
+            set
+            {
+                if (value != this.numResponses)
+                {
+                    numResponses = value;
+                    NotifyPropertChanged("NumResponses");
                 }
             }
         }
@@ -99,45 +156,58 @@ namespace OperationsAlertManager.Models
             }
         }
 
-        public string ReportedBy
+        public string Equipment
         {
-            get { return reportedBy; }
+            get { return equipment; }
             set
             {
-                if (value != this.reportedBy)
+                if (value != this.equipment)
                 {
-                    reportedBy = value;
-                    NotifyPropertChanged("ReportedBy");
+                    equipment = value;
+                    NotifyPropertChanged("Equipment");
                 }
             }
         }
 
-        public string FacilityType
+        public string SourceSystem
         {
-            get { return facilityType; }
+            get { return sourceSystem; }
             set
             {
-                if (value != this.facilityType)
+                if (value != this.sourceSystem)
                 {
-                    facilityType = value;
-                    NotifyPropertChanged("FacilityType");
+                    sourceSystem = value;
+                    NotifyPropertChanged("SourceSystem");
                 }
             }
         }
 
-        public DateTime FirstViewed
+        public DateTime SourceSystemCreateDate
         {
-            get { return firstViewed; }
+            get { return sourceSystemCreateDate; }
             set
             {
-                if (value != this.firstViewed)
+                if (value != this.sourceSystemCreateDate)
                 {
-                    firstViewed = value;
-                    NotifyPropertChanged("FirstViewed");
+                    sourceSystemCreateDate = value;
+                    NotifyPropertChanged("SourceSystemCreateDate");
                 }
             }
         }
-        
+
+        public string SourceSystemDetail
+        {
+            get { return sourceSystemDetail; }
+            set
+            {
+                if (value != this.sourceSystemDetail)
+                {
+                    sourceSystemDetail = value;
+                    NotifyPropertChanged("SourceSystemDetail");
+                }
+            }
+        }
+
         public ObservableCollection<Alert> Alerts
         {
             get { return alerts; }

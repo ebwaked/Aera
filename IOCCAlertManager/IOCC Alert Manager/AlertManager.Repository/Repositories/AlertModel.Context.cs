@@ -237,23 +237,9 @@ namespace OperationsAlertManager.Data.Repositories
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAlertByAlertId_Result>("GetAlertByAlertId", aLRT_RESP_IDParameter);
         }
     
-        public virtual ObjectResult<GetInProgressAlerts_Result> GetInProgressAlerts()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetInProgressAlerts_Result>("GetInProgressAlerts");
-        }
-    
         public virtual ObjectResult<GetPendingAlertCounts_Result> GetPendingAlertCounts(ObjectParameter lST_READ_DTTM)
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPendingAlertCounts_Result>("GetPendingAlertCounts", lST_READ_DTTM);
-        }
-    
-        public virtual ObjectResult<GetPendingAlertsByPriority_Result> GetPendingAlertsByPriority(Nullable<int> aLRT_PRIO_TYPE_ID)
-        {
-            var aLRT_PRIO_TYPE_IDParameter = aLRT_PRIO_TYPE_ID.HasValue ?
-                new ObjectParameter("ALRT_PRIO_TYPE_ID", aLRT_PRIO_TYPE_ID) :
-                new ObjectParameter("ALRT_PRIO_TYPE_ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPendingAlertsByPriority_Result>("GetPendingAlertsByPriority", aLRT_PRIO_TYPE_IDParameter);
         }
     
         public virtual ObjectResult<GetResolvedAlerts_Result> GetResolvedAlerts(Nullable<System.DateTime> sTARTDATE)
@@ -274,7 +260,7 @@ namespace OperationsAlertManager.Data.Repositories
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetResponsesByAlertId_Result>("GetResponsesByAlertId", aLRT_IDParameter);
         }
     
-        public virtual int INSERT_ALRT(string aLRT_SS_NME, Nullable<int> aLRT_SS_ID, string aLRT_SS_KEY_TXT, Nullable<System.DateTime> aLRT_SS_CRE_DTTM, Nullable<int> fAC_ID, string fAC_NME, string aLRT_SS_DTL_TXT, Nullable<int> mGMT_PLNT_FAC_ID, ObjectParameter rETVAL)
+        public virtual int INSERT_ALRT(string aLRT_SS_NME, Nullable<int> aLRT_SS_ID, string aLRT_SS_KEY_TXT, Nullable<System.DateTime> aLRT_SS_CRE_DTTM, Nullable<int> fAC_ID, string fAC_NME, string fAC_TYPE_CDE, string aLRT_SS_DTL_TXT, Nullable<int> mGMT_PLNT_FAC_ID, ObjectParameter rETVAL)
         {
             var aLRT_SS_NMEParameter = aLRT_SS_NME != null ?
                 new ObjectParameter("ALRT_SS_NME", aLRT_SS_NME) :
@@ -300,6 +286,10 @@ namespace OperationsAlertManager.Data.Repositories
                 new ObjectParameter("FAC_NME", fAC_NME) :
                 new ObjectParameter("FAC_NME", typeof(string));
     
+            var fAC_TYPE_CDEParameter = fAC_TYPE_CDE != null ?
+                new ObjectParameter("FAC_TYPE_CDE", fAC_TYPE_CDE) :
+                new ObjectParameter("FAC_TYPE_CDE", typeof(string));
+    
             var aLRT_SS_DTL_TXTParameter = aLRT_SS_DTL_TXT != null ?
                 new ObjectParameter("ALRT_SS_DTL_TXT", aLRT_SS_DTL_TXT) :
                 new ObjectParameter("ALRT_SS_DTL_TXT", typeof(string));
@@ -308,7 +298,7 @@ namespace OperationsAlertManager.Data.Repositories
                 new ObjectParameter("MGMT_PLNT_FAC_ID", mGMT_PLNT_FAC_ID) :
                 new ObjectParameter("MGMT_PLNT_FAC_ID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_ALRT", aLRT_SS_NMEParameter, aLRT_SS_IDParameter, aLRT_SS_KEY_TXTParameter, aLRT_SS_CRE_DTTMParameter, fAC_IDParameter, fAC_NMEParameter, aLRT_SS_DTL_TXTParameter, mGMT_PLNT_FAC_IDParameter, rETVAL);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_ALRT", aLRT_SS_NMEParameter, aLRT_SS_IDParameter, aLRT_SS_KEY_TXTParameter, aLRT_SS_CRE_DTTMParameter, fAC_IDParameter, fAC_NMEParameter, fAC_TYPE_CDEParameter, aLRT_SS_DTL_TXTParameter, mGMT_PLNT_FAC_IDParameter, rETVAL);
         }
     
         public virtual int ResequenceLikelyCauses(Nullable<int> aLRT_TYPE_ID)
@@ -832,6 +822,20 @@ namespace OperationsAlertManager.Data.Repositories
                 new ObjectParameter("USER_ID", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDT_ALRT_TYPE_SRCE_SYS", aLRT_TYPE_SS_ID, aLRT_TYPE_IDParameter, aLRT_SS_IDParameter, aLRT_SS_KEY_TXTParameter, eFTV_DTEParameter, tERM_DTEParameter, uSER_IDParameter);
+        }
+    
+        public virtual ObjectResult<GetPendingAlertsByPriority_Result> GetPendingAlertsByPriority(Nullable<int> aLRT_PRIO_TYPE_ID)
+        {
+            var aLRT_PRIO_TYPE_IDParameter = aLRT_PRIO_TYPE_ID.HasValue ?
+                new ObjectParameter("ALRT_PRIO_TYPE_ID", aLRT_PRIO_TYPE_ID) :
+                new ObjectParameter("ALRT_PRIO_TYPE_ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPendingAlertsByPriority_Result>("GetPendingAlertsByPriority", aLRT_PRIO_TYPE_IDParameter);
+        }
+    
+        public virtual ObjectResult<GetInProgressAlerts_Result> GetInProgressAlerts()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetInProgressAlerts_Result>("GetInProgressAlerts");
         }
     }
 }
